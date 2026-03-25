@@ -14,7 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      estimate_requests: {
+        Row: {
+          address: string
+          admin_notes: string | null
+          budget: string | null
+          conditions: string[] | null
+          consent: boolean | null
+          contact_method: string | null
+          created_at: string | null
+          date_flexibility: string | null
+          email: string | null
+          full_name: string
+          hoa: string | null
+          id: string
+          notes: string | null
+          occupied: string | null
+          other_bids: string | null
+          phone: string
+          photo_urls: string[] | null
+          project_type: string[] | null
+          property_type: string | null
+          scope: string[] | null
+          sqft: string | null
+          status: string | null
+          stories: string | null
+          submitted_at: string | null
+          timeline: string | null
+        }
+        Insert: {
+          address: string
+          admin_notes?: string | null
+          budget?: string | null
+          conditions?: string[] | null
+          consent?: boolean | null
+          contact_method?: string | null
+          created_at?: string | null
+          date_flexibility?: string | null
+          email?: string | null
+          full_name: string
+          hoa?: string | null
+          id?: string
+          notes?: string | null
+          occupied?: string | null
+          other_bids?: string | null
+          phone: string
+          photo_urls?: string[] | null
+          project_type?: string[] | null
+          property_type?: string | null
+          scope?: string[] | null
+          sqft?: string | null
+          status?: string | null
+          stories?: string | null
+          submitted_at?: string | null
+          timeline?: string | null
+        }
+        Update: {
+          address?: string
+          admin_notes?: string | null
+          budget?: string | null
+          conditions?: string[] | null
+          consent?: boolean | null
+          contact_method?: string | null
+          created_at?: string | null
+          date_flexibility?: string | null
+          email?: string | null
+          full_name?: string
+          hoa?: string | null
+          id?: string
+          notes?: string | null
+          occupied?: string | null
+          other_bids?: string | null
+          phone?: string
+          photo_urls?: string[] | null
+          project_type?: string[] | null
+          property_type?: string | null
+          scope?: string[] | null
+          sqft?: string | null
+          status?: string | null
+          stories?: string | null
+          submitted_at?: string | null
+          timeline?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
