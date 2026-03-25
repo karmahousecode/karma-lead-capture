@@ -35,7 +35,7 @@ const HeroSection = () => (
               Request Free Estimate
             </Button>
           </Link>
-          <a href="tel:+15555551234">
+          <a href="tel:+19498364864">
             <Button variant="hero-outline" size="xl" className="w-full sm:w-auto border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
               <Phone className="w-5 h-5" />
               Call Now

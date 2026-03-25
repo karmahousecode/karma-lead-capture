@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Globe } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -20,17 +20,21 @@ const Footer = () => (
           <div className="flex flex-col gap-2">
             <Link to="/" className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">Home</Link>
             <Link to="/estimate" className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">Request Estimate</Link>
+            <a href="https://www.karmahouse.com" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">Our Website</a>
           </div>
         </div>
 
         <div>
           <h4 className="font-display text-lg font-semibold mb-3">Contact</h4>
           <div className="flex flex-col gap-3">
-            <a href="tel:+15555551234" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
-              <Phone className="w-4 h-4 text-accent" /> (555) 555-1234
+            <a href="tel:+19498364864" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+              <Phone className="w-4 h-4 text-accent" /> (949) 836-4864
             </a>
-            <a href="mailto:info@karmahousepainting.com" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
-              <Mail className="w-4 h-4 text-accent" /> info@karmahousepainting.com
+            <a href="mailto:Mark@karmahouse.com" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+              <Mail className="w-4 h-4 text-accent" /> Mark@karmahouse.com
+            </a>
+            <a href="https://www.karmahouse.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+              <Globe className="w-4 h-4 text-accent" /> www.karmahouse.com
             </a>
             <div className="flex items-center gap-2 font-body text-sm text-primary-foreground/70">
               <MapPin className="w-4 h-4 text-accent shrink-0" /> Serving Orange County, CA
