@@ -31,7 +31,7 @@ const ThankYouPage = () => (
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+15555551234">
+            <a href="tel:+19498364864">
               <Button variant="gold" size="lg" className="w-full sm:w-auto">
                 <Phone className="w-4 h-4" /> Call Now
               </Button>
