@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-home.jpg";
 
@@ -26,22 +26,27 @@ const HeroSection = () => (
           <span className="text-gradient-gold">Right.</span>
         </h1>
         <p className="font-body text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-md">
-          We help homeowners who want more than builder-grade results. Expert preparation, premium materials, 
-          and a finish that speaks for itself.
+          Expert prep, premium materials, and a finish that speaks for itself.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col gap-3 sm:max-w-sm">
           <Link to="/estimate">
-            <Button variant="hero" size="xl" className="w-full sm:w-auto">
-              Request Free Estimate
+            <Button variant="hero" size="xl" className="w-full">
+              Start Your Free Estimate
             </Button>
           </Link>
-          <a href="tel:+19498364864">
-            <Button variant="hero-outline" size="xl" className="w-full sm:w-auto border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-              <Phone className="w-5 h-5" />
-              Call Now
+          <Link to="/estimate">
+            <Button variant="hero-outline" size="xl" className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Camera className="w-5 h-5" />
+              Upload Photos for Fast Quote
             </Button>
-          </a>
+          </Link>
         </div>
+        <p className="font-body text-sm text-primary-foreground/70 mt-4">
+          Takes less than 2 minutes. No obligation.
+        </p>
+        <p className="font-body text-xs text-primary-foreground/50 mt-2">
+          Serving Orange County homeowners · Quality-focused, not budget work
+        </p>
       </motion.div>
     </div>
   </section>
