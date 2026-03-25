@@ -108,17 +108,93 @@ const EstimatePage = () => {
   const nextStep = () => { if (validateStep() && step < TOTAL_STEPS) setStep(s => s + 1); };
   const prevStep = () => { if (step > 1) setStep(s => s - 1); };
 
-  const handleSubmit = () => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
     if (!form.consent) {
       toast.error("Please agree to be contacted");
       return;
     }
-    // For now, store in localStorage until backend is wired
-    const submissions = JSON.parse(localStorage.getItem("karma_leads") || "[]");
-    submissions.push({ ...form, photos: form.photos.map(p => ({ caption: p.caption, name: p.file.name })), submittedAt: new Date().toISOString(), status: "New" });
-    localStorage.setItem("karma_leads", JSON.stringify(submissions));
-    toast.success("Estimate request submitted!");
-    navigate("/thank-you");
+    setSubmitting(true);
+    try {
+      // Upload photos to storage
+      const photoUrls: string[] = [];
+      for (const photo of form.photos) {
+        const fileExt = photo.file.name.split('.').pop();
+        const filePath = `${crypto.randomUUID()}.${fileExt}`;
+        const { error: uploadError } = await supabase.storage
+          .from('estimate-photos')
+          .upload(filePath, photo.file);
+        if (!uploadError) {
+          const { data: urlData } = supabase.storage
+            .from('estimate-photos')
+            .getPublicUrl(filePath);
+          photoUrls.push(urlData.publicUrl);
+        }
+      }
+
+      // Save to database
+      const requestId = crypto.randomUUID();
+      const { error: dbError } = await supabase.from('estimate_requests').insert({
+        id: requestId,
+        full_name: form.fullName,
+        phone: form.phone,
+        email: form.email || null,
+        address: form.address,
+        contact_method: form.contactMethod,
+        project_type: form.projectType,
+        property_type: form.propertyType || null,
+        sqft: form.sqft || null,
+        stories: form.stories || null,
+        occupied: form.occupied || null,
+        hoa: form.hoa || null,
+        scope: form.scope,
+        conditions: form.conditions,
+        timeline: form.timeline || null,
+        date_flexibility: form.dateFlexibility || null,
+        budget: form.budget || null,
+        other_bids: form.otherBids || null,
+        notes: form.notes || null,
+        photo_urls: photoUrls,
+        consent: form.consent,
+      });
+
+      if (dbError) throw dbError;
+
+      // Send notification email via edge function
+      await supabase.functions.invoke('send-estimate-notification', {
+        body: {
+          requestId,
+          fullName: form.fullName,
+          phone: form.phone,
+          email: form.email,
+          address: form.address,
+          contactMethod: form.contactMethod,
+          projectType: form.projectType,
+          propertyType: form.propertyType,
+          sqft: form.sqft,
+          stories: form.stories,
+          occupied: form.occupied,
+          hoa: form.hoa,
+          scope: form.scope,
+          conditions: form.conditions,
+          timeline: form.timeline,
+          dateFlexibility: form.dateFlexibility,
+          budget: form.budget,
+          otherBids: form.otherBids,
+          notes: form.notes,
+          photoUrls,
+        },
+      });
+
+      toast.success("Estimate request submitted!");
+      navigate("/thank-you");
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const progress = (step / TOTAL_STEPS) * 100;
