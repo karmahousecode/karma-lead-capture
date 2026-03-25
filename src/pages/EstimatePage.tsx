@@ -151,7 +151,7 @@ const EstimatePage = () => {
                     </div>
                     <div>
                       <Label className="font-body text-sm">Phone *</Label>
-                      <Input value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="(555) 555-1234" type="tel" className="mt-1.5 h-12 text-base" />
+                      <Input value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="(949) 836-4864" type="tel" className="mt-1.5 h-12 text-base" />
                       {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
                     </div>
                     <div>

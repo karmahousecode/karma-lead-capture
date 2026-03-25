@@ -32,7 +32,10 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          <a href="tel:+15555551234">
+          <a href="tel:+19498364864" className="font-body text-sm font-medium text-muted-foreground hover:text-accent transition-colors">
+            (949) 836-4864
+          </a>
+          <a href="tel:+19498364864">
             <Button variant="gold" size="sm">
               <Phone className="w-4 h-4" />
               Call Now
@@ -70,7 +73,7 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="tel:+15555551234" className="mt-2">
+              <a href="tel:+19498364864" className="mt-2">
                 <Button variant="gold" size="lg" className="w-full">
                   <Phone className="w-4 h-4" />
                   Call Now
