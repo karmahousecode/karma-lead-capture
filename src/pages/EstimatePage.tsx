@@ -484,8 +484,8 @@ const EstimatePage = () => {
                   Next <ChevronRight className="w-4 h-4" />
                 </Button>
               ) : (
-                <Button variant="gold" size="lg" onClick={handleSubmit}>
-                  <Send className="w-4 h-4" /> Submit Request
+                <Button variant="gold" size="lg" onClick={handleSubmit} disabled={submitting}>
+                  <Send className="w-4 h-4" /> {submitting ? "Submitting..." : "Submit Request"}
                 </Button>
               )}
             </div>
