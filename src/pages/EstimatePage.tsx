@@ -121,16 +121,22 @@ const EstimatePage = () => {
       const photoUrls: string[] = [];
       for (const photo of form.photos) {
         const fileExt = photo.file.name.split('.').pop();
-        const filePath = `${crypto.randomUUID()}.${fileExt}`;
+        const filePath = `estimates/${crypto.randomUUID()}.${fileExt}`;
         const { error: uploadError } = await supabase.storage
           .from('estimate-photos')
-          .upload(filePath, photo.file);
-        if (!uploadError) {
-          const { data: urlData } = supabase.storage
-            .from('estimate-photos')
-            .getPublicUrl(filePath);
-          photoUrls.push(urlData.publicUrl);
+          .upload(filePath, photo.file, {
+            cacheControl: '3600',
+            upsert: false,
+          });
+        if (uploadError) {
+          console.error('Photo upload error:', uploadError.message);
+          toast.error(`Failed to upload ${photo.file.name}`);
+          continue;
         }
+        const { data: urlData } = supabase.storage
+          .from('estimate-photos')
+          .getPublicUrl(filePath);
+        photoUrls.push(urlData.publicUrl);
       }
 
       // Save to database
