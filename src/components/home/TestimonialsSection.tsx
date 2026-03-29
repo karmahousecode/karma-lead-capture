@@ -12,16 +12,19 @@ const TestimonialsSection = () => (
         className="text-center"
       >
         <p className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-2">Testimonials</p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">See Our Real Customer Reviews</h2>
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          See Our Real Customer Reviews
+        </h2>
         <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-8">
-          We let our work and our customers speak for us. Check out verified reviews from real homeowners in Orange County.
+          We let our work and our customers speak for us. Check out verified reviews from real homeowners in Orange
+          County.
         </p>
         <div className="flex justify-center gap-1 mb-8">
           {[...Array(5)].map((_, j) => (
             <Star key={j} className="w-6 h-6 fill-accent text-accent" />
           ))}
         </div>
-        <a href="https://www.karmahouse.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.karmahouse.com#testimonial" target="_blank" rel="noopener noreferrer">
           <Button variant="gold" size="lg">
             <ExternalLink className="w-4 h-4" />
             Read Our Reviews
