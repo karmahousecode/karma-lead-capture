@@ -17,9 +17,10 @@ const GallerySection = () => (
           <Paintbrush className="w-12 h-12 text-accent" />
         </div>
         <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-8">
-          View our recent work and transformations on our website. From interior repaints to full exterior projects, see the quality difference for yourself.
+          View our recent work and transformations on our website. From interior repaints to full exterior projects, see
+          the quality difference for yourself.
         </p>
-        <a href="https://www.karmahouse.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.karmahouse.com#gallery" target="_blank" rel="noopener noreferrer">
           <Button variant="gold" size="lg">
             <ExternalLink className="w-4 h-4" />
             View Our Projects
