@@ -375,7 +375,7 @@ const EstimatePage = () => {
 
                 {step === 6 && (
                   <div className="space-y-5">
-                    <h2 className="font-display text-xl font-semibold text-foreground">Timing & Budget</h2>
+                    <h2 className="font-display text-xl font-semibold text-foreground">Timing</h2>
                     <div>
                       <Label className="font-body text-sm">When do you want the project done?</Label>
                       <Input value={form.timeline} onChange={e => updateField("timeline", e.target.value)} placeholder="e.g. Next month, Summer 2026" className="mt-1.5 h-12 text-base" />
