@@ -8,6 +8,7 @@ import EstimatePage from "./pages/EstimatePage.tsx";
 import ThankYouPage from "./pages/ThankYouPage.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import UnsubscribePage from "./pages/UnsubscribePage.tsx";
 
 const queryClient = new QueryClient();
 
