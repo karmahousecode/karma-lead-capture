@@ -375,7 +375,7 @@ const EstimatePage = () => {
 
                 {step === 6 && (
                   <div className="space-y-5">
-                    <h2 className="font-display text-xl font-semibold text-foreground">Timing & Budget</h2>
+                    <h2 className="font-display text-xl font-semibold text-foreground">Timing</h2>
                     <div>
                       <Label className="font-body text-sm">When do you want the project done?</Label>
                       <Input value={form.timeline} onChange={e => updateField("timeline", e.target.value)} placeholder="e.g. Next month, Summer 2026" className="mt-1.5 h-12 text-base" />
@@ -390,17 +390,6 @@ const EstimatePage = () => {
                           </div>
                         ))}
                       </RadioGroup>
-                    </div>
-                    <div>
-                      <Label className="font-body text-sm">Budget Range</Label>
-                      <Select value={form.budget} onValueChange={v => updateField("budget", v)}>
-                        <SelectTrigger className="mt-1.5 h-12 text-base"><SelectValue placeholder="Select range" /></SelectTrigger>
-                        <SelectContent>
-                          {["Under $2,000", "$2,000 – $5,000", "$5,000 – $10,000", "$10,000 – $20,000", "$20,000+", "Not sure"].map(b => (
-                            <SelectItem key={b} value={b}>{b}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
                     </div>
                     <div>
                       <Label className="font-body text-sm">Are you getting other bids?</Label>
