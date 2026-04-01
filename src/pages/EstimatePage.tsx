@@ -392,17 +392,6 @@ const EstimatePage = () => {
                       </RadioGroup>
                     </div>
                     <div>
-                      <Label className="font-body text-sm">Budget Range</Label>
-                      <Select value={form.budget} onValueChange={v => updateField("budget", v)}>
-                        <SelectTrigger className="mt-1.5 h-12 text-base"><SelectValue placeholder="Select range" /></SelectTrigger>
-                        <SelectContent>
-                          {["Under $2,000", "$2,000 – $5,000", "$5,000 – $10,000", "$10,000 – $20,000", "$20,000+", "Not sure"].map(b => (
-                            <SelectItem key={b} value={b}>{b}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div>
                       <Label className="font-body text-sm">Are you getting other bids?</Label>
                       <RadioGroup value={form.otherBids} onValueChange={v => updateField("otherBids", v)} className="flex gap-4 mt-2">
                         {["Yes", "No"].map(b => (
