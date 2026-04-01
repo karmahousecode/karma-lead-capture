@@ -167,29 +167,34 @@ const EstimatePage = () => {
 
       if (dbError) throw dbError;
 
-      // Send notification email via edge function
-      await supabase.functions.invoke('send-estimate-notification', {
+      // Send notification email via transactional email system
+      await supabase.functions.invoke('send-transactional-email', {
         body: {
-          requestId,
-          fullName: form.fullName,
-          phone: form.phone,
-          email: form.email,
-          address: form.address,
-          contactMethod: form.contactMethod,
-          projectType: form.projectType,
-          propertyType: form.propertyType,
-          sqft: form.sqft,
-          stories: form.stories,
-          occupied: form.occupied,
-          hoa: form.hoa,
-          scope: form.scope,
-          conditions: form.conditions,
-          timeline: form.timeline,
-          dateFlexibility: form.dateFlexibility,
-          budget: form.budget,
-          otherBids: form.otherBids,
-          notes: form.notes,
-          photoUrls,
+          templateName: 'estimate-notification',
+          recipientEmail: 'mark@karmahouse.com',
+          idempotencyKey: `estimate-notify-${requestId}`,
+          templateData: {
+            requestId,
+            fullName: form.fullName,
+            phone: form.phone,
+            email: form.email,
+            address: form.address,
+            contactMethod: form.contactMethod,
+            projectType: form.projectType,
+            propertyType: form.propertyType,
+            sqft: form.sqft,
+            stories: form.stories,
+            occupied: form.occupied,
+            hoa: form.hoa,
+            scope: form.scope,
+            conditions: form.conditions,
+            timeline: form.timeline,
+            dateFlexibility: form.dateFlexibility,
+            budget: form.budget,
+            otherBids: form.otherBids,
+            notes: form.notes,
+            photoUrls,
+          },
         },
       });
 
