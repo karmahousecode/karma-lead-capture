@@ -425,7 +425,7 @@ const EstimatePage = () => {
                     </div>
                     <div>
                       <Label className="font-body text-sm">Upload Photos (up to 10)</Label>
-                      <label className="mt-2 flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-accent/50 transition-colors active:bg-accent/5">
+                      <label className="relative mt-2 flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-accent/50 transition-colors active:bg-accent/5 overflow-hidden">
                         <Upload className="w-8 h-8 text-muted-foreground" />
                         <span className="font-body text-sm text-muted-foreground">Tap to upload photos</span>
                         <input
