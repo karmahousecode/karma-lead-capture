@@ -16,6 +16,12 @@ import { toast } from "sonner";
 
 const TOTAL_STEPS = 8;
 
+// Detect in-app browsers (TikTok, Instagram, Facebook, etc.)
+const isInAppBrowser = () => {
+  const ua = navigator.userAgent || '';
+  return /FBAN|FBAV|Instagram|TikTok|Musical_ly|BytedanceWebview|Snapchat|Twitter|Line\//i.test(ua);
+};
+
 interface FormData {
   fullName: string;
   phone: string;
