@@ -430,11 +430,10 @@ const EstimatePage = () => {
                         <span className="font-body text-sm text-muted-foreground">Tap to upload photos</span>
                         <input
                           type="file"
-                          accept="image/jpeg,image/png,image/heic,image/heif,image/webp,image/*"
-                          capture={undefined}
+                          accept="image/*"
                           multiple
                           onChange={handlePhotoUpload}
-                          className="hidden"
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                           style={{ fontSize: '16px' }}
                         />
                       </label>
