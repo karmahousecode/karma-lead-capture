@@ -70,16 +70,27 @@ const EstimatePage = () => {
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
     if (form.photos.length + files.length > 10) {
       toast.error("Maximum 10 photos allowed");
       return;
     }
-    const newPhotos = files.map(file => ({
+    const maxSize = 20 * 1024 * 1024; // 20MB
+    const validFiles = files.filter(file => {
+      if (file.size > maxSize) {
+        toast.error(`${file.name} is too large (max 20MB)`);
+        return false;
+      }
+      return true;
+    });
+    const newPhotos = validFiles.map(file => ({
       file,
       caption: "",
       preview: URL.createObjectURL(file),
     }));
     updateField("photos", [...form.photos, ...newPhotos]);
+    // Reset the input so the same file can be re-selected
+    e.target.value = '';
   };
 
   const removePhoto = (index: number) => {
@@ -414,10 +425,18 @@ const EstimatePage = () => {
                     </div>
                     <div>
                       <Label className="font-body text-sm">Upload Photos (up to 10)</Label>
-                      <label className="mt-2 flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-accent/50 transition-colors">
+                      <label className="mt-2 flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-accent/50 transition-colors active:bg-accent/5">
                         <Upload className="w-8 h-8 text-muted-foreground" />
                         <span className="font-body text-sm text-muted-foreground">Tap to upload photos</span>
-                        <input type="file" accept="image/*" multiple onChange={handlePhotoUpload} className="hidden" />
+                        <input
+                          type="file"
+                          accept="image/jpeg,image/png,image/heic,image/heif,image/webp,image/*"
+                          capture={undefined}
+                          multiple
+                          onChange={handlePhotoUpload}
+                          className="hidden"
+                          style={{ fontSize: '16px' }}
+                        />
                       </label>
                     </div>
                     {form.photos.length > 0 && (
