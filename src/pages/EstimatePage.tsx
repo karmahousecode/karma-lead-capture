@@ -70,16 +70,27 @@ const EstimatePage = () => {
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
     if (form.photos.length + files.length > 10) {
       toast.error("Maximum 10 photos allowed");
       return;
     }
-    const newPhotos = files.map(file => ({
+    const maxSize = 20 * 1024 * 1024; // 20MB
+    const validFiles = files.filter(file => {
+      if (file.size > maxSize) {
+        toast.error(`${file.name} is too large (max 20MB)`);
+        return false;
+      }
+      return true;
+    });
+    const newPhotos = validFiles.map(file => ({
       file,
       caption: "",
       preview: URL.createObjectURL(file),
     }));
     updateField("photos", [...form.photos, ...newPhotos]);
+    // Reset the input so the same file can be re-selected
+    e.target.value = '';
   };
 
   const removePhoto = (index: number) => {
