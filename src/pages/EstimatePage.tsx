@@ -431,6 +431,15 @@ const EstimatePage = () => {
                     </div>
                     <div>
                       <Label className="font-body text-sm">Upload Photos (up to 10)</Label>
+                      {isInAppBrowser() && (
+                        <div className="mt-2 p-3 bg-accent/10 border border-accent/30 rounded-lg text-sm text-foreground">
+                          <p className="font-semibold">📱 Having trouble uploading?</p>
+                          <p className="mt-1 text-muted-foreground">
+                            In-app browsers (TikTok, Instagram, etc.) may block photo uploads. 
+                            Tap the <strong>⋯</strong> menu and select <strong>"Open in browser"</strong> to use Safari/Chrome instead.
+                          </p>
+                        </div>
+                      )}
                       <label className="relative mt-2 flex flex-col items-center justify-center gap-2 p-8 border-2 border-dashed border-border rounded-lg cursor-pointer hover:border-accent/50 transition-colors active:bg-accent/5 overflow-hidden">
                         <Upload className="w-8 h-8 text-muted-foreground" />
                         <span className="font-body text-sm text-muted-foreground">Tap to upload photos</span>
