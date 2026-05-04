@@ -26,25 +26,25 @@ const HeroSection = () => (
           <span className="text-gradient-gold">Right.</span>
         </h1>
         <p className="font-body text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-md">
-          Interior painting, exterior painting, cabinet refinishing, stucco repair, drywall repair, and wood repair for Orange County homeowners.
+          Interior painting, exterior painting, cabinet painting &amp; refinishing, stucco repair, drywall repair, and wood repair for Irvine and Orange County homeowners.
         </p>
         <div className="flex flex-col gap-3 sm:max-w-sm">
           <Link to="/estimate">
             <Button variant="hero" size="xl" className="w-full">
-              Start Your Free Estimate
+              Start Your Free Estimate (2 Minutes)
             </Button>
           </Link>
           <Link to="/estimate">
             <Button variant="hero-outline" size="xl" className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
               <Camera className="w-5 h-5" />
-              Upload Photos for Fast Quote
+              Upload Photos for Faster Quote
             </Button>
           </Link>
         </div>
         <p className="font-body text-sm text-primary-foreground/70 mt-4">
           Takes less than 2 minutes. No obligation.
         </p>
-        <p className="font-body text-xs text-primary-foreground/50 mt-2">
+        <p className="font-body text-sm text-primary-foreground/90 mt-2">
           Serving Orange County since 2001 • Owner-operated • Detailed prep • Premium finishes
         </p>
       </motion.div>

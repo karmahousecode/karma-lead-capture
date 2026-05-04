@@ -22,7 +22,7 @@ const GallerySection = () => (
         <a href="https://www.karmahouse.com#gallery" target="_blank" rel="noopener noreferrer">
           <Button variant="gold" size="lg">
             <ExternalLink className="w-4 h-4" />
-            View Before &amp; After Gallery
+            View Before &amp; After Projects
           </Button>
         </a>
       </motion.div>
