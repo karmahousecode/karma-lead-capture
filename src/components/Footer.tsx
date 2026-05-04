@@ -10,8 +10,7 @@ const Footer = () => (
             Karma <span className="text-gradient-gold">House Painting</span>
           </h3>
           <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
-            Premium residential painting services in Orange County, California. Quality craftsmanship and
-            professional results for homeowners who expect the best.
+            Karma House Painting provides premium residential interior painting, exterior painting, cabinet refinishing, stucco repair, drywall repair, and wood repair in Irvine and Orange County, California.
           </p>
         </div>
 
@@ -37,7 +36,7 @@ const Footer = () => (
               <Globe className="w-4 h-4 text-accent" /> www.karmahouse.com
             </a>
             <div className="flex items-center gap-2 font-body text-sm text-primary-foreground/70">
-              <MapPin className="w-4 h-4 text-accent shrink-0" /> Serving Orange County, CA
+              <MapPin className="w-4 h-4 text-accent shrink-0" /> Serving Irvine &amp; Orange County, CA
             </div>
           </div>
         </div>

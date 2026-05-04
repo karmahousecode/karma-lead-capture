@@ -19,14 +19,14 @@ const HeroSection = () => (
         className="max-w-xl"
       >
         <p className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-4">
-          Orange County's Premier Painters
+          Irvine &amp; Orange County Painting Contractor
         </p>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary-foreground mb-6">
-          Painting Done{" "}
+          Professional Painting Done{" "}
           <span className="text-gradient-gold">Right.</span>
         </h1>
         <p className="font-body text-base md:text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-md">
-          Expert prep, premium materials, and a finish that speaks for itself.
+          Interior painting, exterior painting, cabinet refinishing, stucco repair, drywall repair, and wood repair for Orange County homeowners.
         </p>
         <div className="flex flex-col gap-3 sm:max-w-sm">
           <Link to="/estimate">
@@ -45,7 +45,7 @@ const HeroSection = () => (
           Takes less than 2 minutes. No obligation.
         </p>
         <p className="font-body text-xs text-primary-foreground/50 mt-2">
-          Serving Orange County homeowners · Quality-focused, not budget work
+          Serving Orange County since 2001 • Owner-operated • Detailed prep • Premium finishes
         </p>
       </motion.div>
     </div>

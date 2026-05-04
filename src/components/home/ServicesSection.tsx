@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Paintbrush, Home, PaintBucket, Wrench, Droplets, Shield, Hammer } from "lucide-react";
+import { Paintbrush, Home, PaintBucket, Wrench, Droplets, Shield, Hammer, Layers } from "lucide-react";
 
 const services = [
   { icon: Paintbrush, title: "Interior Painting", desc: "Walls, ceilings, trim, and doors with meticulous prep and premium finishes." },
   { icon: Home, title: "Exterior Painting", desc: "Complete exterior painting that protects and transforms your home's curb appeal." },
-  { icon: PaintBucket, title: "Cabinet Painting", desc: "Factory-quality cabinet finishes without the cost of full replacement." },
+  { icon: PaintBucket, title: "Cabinet Painting & Refinishing", desc: "Factory-quality cabinet finishes without the cost of full replacement." },
   { icon: Wrench, title: "Stucco Patch & Repair", desc: "Expert stucco repair and patching to restore your home's exterior surfaces." },
+  { icon: Layers, title: "Drywall & Ceiling Repair", desc: "Drywall patches, ceiling repairs, texture touch-ups, priming, and painting for a clean finished result." },
   { icon: Hammer, title: "Wood Repair", desc: "Damaged wood repair and replacement before painting for lasting results." },
   { icon: Droplets, title: "Power Washing", desc: "Thorough surface cleaning to prepare for painting or refresh your property." },
   { icon: Shield, title: "Surface Prep", desc: "Detailed scraping, sanding, priming, and caulking — the foundation of a great paint job." },

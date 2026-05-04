@@ -13,7 +13,7 @@ const TestimonialsSection = () => (
       >
         <p className="font-body text-sm font-semibold tracking-widest uppercase text-accent mb-2">Testimonials</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-          See Our Real Customer Reviews
+          Read Our Orange County Customer Reviews
         </h2>
         <p className="font-body text-base text-muted-foreground max-w-lg mx-auto mb-8">
           We let our work and our customers speak for us. Check out verified reviews from real homeowners in Orange
@@ -27,7 +27,7 @@ const TestimonialsSection = () => (
         <a href="https://www.karmahouse.com#testimonial" target="_blank" rel="noopener noreferrer">
           <Button variant="gold" size="lg">
             <ExternalLink className="w-4 h-4" />
-            Read Our Reviews
+            Read Our Google Reviews
           </Button>
         </a>
       </motion.div>
